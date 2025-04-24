@@ -1,4 +1,4 @@
-package com.juaracoding.stepdefinitions;
+package com.juaracoding.StepDefinitions;
 
 import com.juaracoding.DriverSingleton;
 import com.juaracoding.pages.LoginPage;
@@ -11,7 +11,7 @@ import org.testng.Assert;
 
 import java.time.Duration;
 
-public class LoginSteps {
+public class LoginStepTest {
     private WebDriver driver;
     private LoginPage loginPage;
 
