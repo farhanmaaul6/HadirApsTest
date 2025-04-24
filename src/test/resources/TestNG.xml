@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TA JC SQA21">
+    <parameter name="browser" value="CHROME" />
+
+    <test name="Login, Add to Cart, and Checkout">
+        <classes>
+            <class name="com.juaracoding.Hook" />
+            <class name="com.juaracoding.TestRunner" />
+            <!--            <class name="com.juaracoding." />-->
+        </classes>
+    </test>
+</suite>
