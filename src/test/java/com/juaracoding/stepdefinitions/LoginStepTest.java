@@ -1,4 +1,4 @@
-package com.juaracoding.StepDefinitions;
+package com.juaracoding.stepdefinitions;
 
 import com.juaracoding.DriverSingleton;
 import com.juaracoding.pages.LoginPage;
@@ -31,7 +31,6 @@ public class LoginStepTest {
         loginPage.clickLogin();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
     }
-
 
     @Then("User should be redirected to the dashboard")
     public void userShouldBeRedirectedToTheDashboard() throws InterruptedException {

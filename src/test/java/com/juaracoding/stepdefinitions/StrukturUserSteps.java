@@ -22,8 +22,9 @@ public class StrukturUserSteps {
     public StrukturUserSteps() {
         driver = DriverSingleton.getDriver();
         loginPage = new LoginPage(driver);
-        importPage = new ImportPage(driver); // Inisialisasi ProductPage di sini
-        PageFactory.initElements(driver, this);  // Inisialisasi elemen halaman jika menggunakan PageFactory
+        importPage = new ImportPage(driver);
+
+        PageFactory.initElements(driver, this);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
