@@ -22,6 +22,7 @@ public class LoginPage {
 
     @FindBy(xpath = "//p[@class='MuiTypography-root MuiTypography-body1 css-1ar04jk']")
     private WebElement dashboardLabel;
+    
 
     public LoginPage(WebDriver driver) {
         actions = new Actions(driver);

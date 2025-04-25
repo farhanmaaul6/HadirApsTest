@@ -3,11 +3,11 @@
 <suite name="TA JC SQA21">
     <parameter name="browser" value="CHROME" />
 
-    <test name="Login, Add to Cart, and Checkout">
+    <test name="Menu Laporan dan Menu Import ">
         <classes>
             <class name="com.juaracoding.Hook" />
-            <class name="com.juaracoding.TestRunner" />
-            <!--            <class name="com.juaracoding." />-->
+<!--            <class name="com.juaracoding.PositiveTestRunner" />-->
+            <class name="com.juaracoding.NegativeTestRunner" />
         </classes>
     </test>
 </suite>
