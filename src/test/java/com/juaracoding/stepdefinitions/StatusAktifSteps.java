@@ -81,8 +81,11 @@ public class StatusAktifSteps {
     }
 
     @Then("Error message should be shown for missing file in the Status Aktif")
-    public void errorMessageShouldBeShownForMissingFile(){
-
+    public void errorMessageShouldBeShownForMissingFile() throws InterruptedException {
+        Thread.sleep(2000);
+        String actual = importPage.getValidateMessage();
+        String expected = "Please select a file.";
+        Assert.assertEquals(actual, expected);
     }
 
     @When("Admin uploads incorrect status aktif template file")

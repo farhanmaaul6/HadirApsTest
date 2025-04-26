@@ -79,8 +79,11 @@ public class StrukturUserSteps {
     }
 
     @Then("Error message should be shown for missing file in the Struktur User")
-    public void errorMessageShouldBeShownForMissingFile(){
-
+    public void errorMessageShouldBeShownForMissingFile() throws InterruptedException {
+        Thread.sleep(2000);
+        String actual = importPage.getValidateMessage();
+        String expected = "Please select a file.";
+        Assert.assertEquals(actual, expected);
     }
 
     @When("Admin uploads incorrect struktur user template file")
