@@ -48,6 +48,7 @@ public class ImportPage {
     @FindBy(xpath = "//p[@id='selfie-helper-text']")
     private WebElement helperText;
 
+
     public ImportPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
@@ -94,6 +95,10 @@ public class ImportPage {
 
     public WebElement buttonChooseFile() {
         return buttonChooseFile;
+    }
+
+    public String getValidateMessage() {
+        return buttonChooseFile.getAttribute("validationMessage");
     }
 
     public void buttonImport() {

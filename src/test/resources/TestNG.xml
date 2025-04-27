@@ -6,7 +6,8 @@
     <test name="Menu Laporan dan Menu Import ">
         <classes>
             <class name="com.juaracoding.Hook" />
-            <class name="com.juaracoding.PositiveTestRunner" />
+            <class name="com.juaracoding.TestRunner" />
+<!--            <class name="com.juaracoding.PositiveTestRunner" />-->
 <!--            <class name="com.juaracoding.NegativeTestRunner" />-->
         </classes>
     </test>

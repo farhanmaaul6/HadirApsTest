@@ -25,7 +25,8 @@ public class LoginStepTest {
     }
 
     @When("User enters email {string} and password {string}")
-    public void userEntersEmailAndPassword(String username, String password) {
+    public void userEntersEmailAndPassword(String username, String password) throws InterruptedException {
+        Thread.sleep(2000);
         loginPage.loginAction(username, password);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         loginPage.clickLogin();
