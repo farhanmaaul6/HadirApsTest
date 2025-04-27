@@ -21,6 +21,18 @@ public class ImportPage {
     @FindBy(xpath = "//p[@class='MuiTypography-root MuiTypography-body1 css-1kei35f']")
     private WebElement strukturUserlabel;
 
+    @FindBy(xpath = "//p[@class='MuiTypography-root MuiTypography-body1 css-aqx7sf'][normalize-space()='Import Cuti']")
+    private WebElement cutiTab;
+
+    @FindBy(xpath = "//p[@class='MuiTypography-root MuiTypography-body1 css-1kei35f']")
+    private WebElement cutiLabel;
+
+    @FindBy(xpath = "//p[normalize-space()='Import Absen']")
+    private WebElement absenTab;
+
+    @FindBy(xpath = "//p[@class='MuiTypography-root MuiTypography-body1 css-1kei35f']")
+    private WebElement absenLabel;
+
     @FindBy(xpath = "//button[normalize-space()='Download Template']")
     private WebElement buttonDownload;
 
@@ -58,6 +70,22 @@ public class ImportPage {
 
     public String getStrukturUserLabel() {
         return strukturUserlabel.getText();
+    }
+
+    public void openCutiTab() {
+        cutiTab.click();
+    }
+
+    public String getCutiLabel() {
+        return cutiLabel.getText();
+    }
+
+    public void openAbsenTab() {
+        absenTab.click();
+    }
+
+    public String getAbsenLabel() {
+        return absenLabel.getText();
     }
 
     public void buttonDownload() {
