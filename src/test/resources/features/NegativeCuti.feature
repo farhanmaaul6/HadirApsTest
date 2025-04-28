@@ -5,7 +5,7 @@ Feature: Negative Test Import Cuti
 
   @auth @negative
   Scenario: Import tanpa memilih file (Cuti)
-    When Admin navigates to Import Cuti
+    When Admin navigates to Import > Cuti
     And Admin clicks Import without select a file
     Then Error Message should be show for missing file in cuti
 

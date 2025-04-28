@@ -21,7 +21,7 @@ public class ImportPage {
     @FindBy(xpath = "//p[@class='MuiTypography-root MuiTypography-body1 css-1kei35f']")
     private WebElement strukturUserlabel;
 
-    @FindBy(xpath = "//p[@class='MuiTypography-root MuiTypography-body1 css-aqx7sf'][normalize-space()='Import Cuti']")
+    @FindBy(xpath = "//p[normalize-space()='Import Cuti']")
     private WebElement cutiTab;
 
     @FindBy(xpath = "//p[@class='MuiTypography-root MuiTypography-body1 css-1kei35f']")
@@ -39,6 +39,9 @@ public class ImportPage {
     @FindBy(xpath = "//button[@type='submit']")
     private WebElement buttonImport;
 
+    @FindBy(xpath = "//input[@id='file_excel']")
+    private WebElement buttonChooseFileCuti;
+
     @FindBy(xpath = "//input[@id='selfie']")
     private WebElement buttonChooseFile;
 
@@ -48,6 +51,8 @@ public class ImportPage {
     @FindBy(xpath = "//p[@id='selfie-helper-text']")
     private WebElement helperText;
 
+    @FindBy(xpath = "//p[@id='file_excel-helper-text']")
+    private WebElement helperTextCuti;
 
     public ImportPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
@@ -97,8 +102,16 @@ public class ImportPage {
         return buttonChooseFile;
     }
 
+    public WebElement buttonChooseFileCuti() {
+        return buttonChooseFileCuti;
+    }
+
     public String getValidateMessage() {
         return buttonChooseFile.getAttribute("validationMessage");
+    }
+
+    public String getValidateMessageCuti() {
+        return buttonChooseFileCuti.getAttribute("validationMessage");
     }
 
     public void buttonImport() {
@@ -111,5 +124,8 @@ public class ImportPage {
 
     public void getHelperText() {
         helperText.getText();
+    }
+    public void getHelperTextCuti() {
+        helperTextCuti.getText();
     }
 }

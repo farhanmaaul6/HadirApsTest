@@ -37,8 +37,6 @@ public class StatusAktifSteps {
     @When("Admin navigates to Import > Status Aktif")
     public void adminNavigateToImportStatusAktif() throws InterruptedException {
         Thread.sleep(2000);
-        importPage.openImportMenu();
-        Thread.sleep(2000);
         importPage.openStatusAktifTab();
         String actual = importPage.getStatusAktifLabel();
         String expected = "Import Status Aktif";

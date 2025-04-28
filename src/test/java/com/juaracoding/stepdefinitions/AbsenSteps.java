@@ -15,10 +15,9 @@ import java.io.File;
 import java.time.Duration;
 
 public class AbsenSteps {
-
-    WebDriver driver;
-    ImportPage importPage;
-    LoginPage loginPage;
+    private WebDriver driver;
+    private ImportPage importPage;
+    private LoginPage loginPage;
 
     public AbsenSteps() {
         driver = DriverSingleton.getDriver();
@@ -27,17 +26,16 @@ public class AbsenSteps {
 
         PageFactory.initElements(driver,this);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-
     }
 
     @Given("Admin is on the dashboard page for Absen")
-    public void adminIsOnTheDashbpardPageForAbsen() throws InterruptedException {
+    public void adminIsOnTheDashboardPageForAbsen() throws InterruptedException {
         Thread.sleep(2000);
         loginPage.getDashboardLabel();
     }
 
     @When("Admin navigates to Import > Absen")
-    public void adminNavigatesToImportCuti() throws InterruptedException {
+    public void adminNavigatesToImportAbsen() throws InterruptedException {
         Thread.sleep(2000);
         importPage.openImportMenu();
         Thread.sleep(2000);
@@ -76,12 +74,6 @@ public class AbsenSteps {
     }
 
     //negative
-    @When("Admin navigates to Import > Absen")
-    public void adminNavigatestoImportAbsen() throws InterruptedException {
-        Thread.sleep(2000);
-        importPage.popUp();
-    }
-
     @And("Admin clicks import without choose a file")
     public void adminClicksImportWithoutChooseAFile() throws InterruptedException {
         Thread.sleep(2000);
@@ -91,7 +83,9 @@ public class AbsenSteps {
     @Then("Error message should be shown for missing file in Absen")
     public void errorMessageShouldBeShownForMissingFileInAbsen() throws InterruptedException {
         Thread.sleep(2000);
-
+        String actual = importPage.getValidateMessage();
+        String expected = "Please select a file.";
+        Assert.assertEquals(actual, expected);
     }
 
     @When("Admin uploads incorrect Absen template file")
@@ -107,8 +101,22 @@ public class AbsenSteps {
     @Then("Error message should be show for invalid format in Absen")
     public void errorMessageShouldBeShowForInvalidFormatInAbsen() throws InterruptedException {
         Thread.sleep(2000);
-        importPage.getHelperText();
+        importPage.popUp();
     }
 
+    @When("Admin uploads non-Excel file for Absen")
+    public void adminUploadsNonExcelFileForAbsen() throws InterruptedException {
+        String fileErrorPath = "C:\\Users\\Balbo\\Downloads\\DATA_STATUS_USER.pdf";
+        File errorFile = new File(fileErrorPath);
+        Thread.sleep(2000);
+        importPage.buttonChooseFile().sendKeys(errorFile.getAbsolutePath());
+        Thread.sleep(2000);
+        importPage.buttonImport();
+    }
 
+    @Then("Error message should be show for file type in Absen")
+    public void errorMessageShouldBeShowForFileTypeInAbsen() throws InterruptedException {
+        Thread.sleep(2000);
+        importPage.getHelperText();
+    }
 }
