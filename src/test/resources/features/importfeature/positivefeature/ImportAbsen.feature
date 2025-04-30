@@ -1,4 +1,4 @@
-Feature: Import Absen
+Feature: Positive Import Absen
 
   Background:
     Given Admin is on the dashboard page for Absen

@@ -1,4 +1,4 @@
-package com.juaracoding;
+package com.juaracoding.runner;
 
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;

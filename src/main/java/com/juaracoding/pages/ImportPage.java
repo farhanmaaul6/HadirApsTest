@@ -125,6 +125,7 @@ public class ImportPage {
     public void getHelperText() {
         helperText.getText();
     }
+
     public void getHelperTextCuti() {
         helperTextCuti.getText();
     }

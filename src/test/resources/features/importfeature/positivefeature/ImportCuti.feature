@@ -1,4 +1,4 @@
-Feature: Import Cuti
+Feature: Positive Import Cuti
 
   Background:
     Given Admin is on the dashboard page for Absen
