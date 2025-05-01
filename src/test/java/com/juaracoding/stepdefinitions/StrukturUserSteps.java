@@ -60,7 +60,7 @@ public class StrukturUserSteps {
 
     @When("Admin uploads valid struktur user template file")
     public void adminUploadsValidStrukturUserTemplateFile() throws InterruptedException {
-        String fileValidPath = "C:\\Users\\Balbo\\Downloads\\DATA_STRUKTUR_USER_VALID.xlsx";
+        String fileValidPath = "C:\\Users\\Balbo\\Downloads\\DataTest\\DATA_STRUKTUR_USER_VALID.xlsx";
         File validFile = new File(fileValidPath);
         Thread.sleep(2000);
         importPage.buttonChooseFile().sendKeys(validFile.getAbsolutePath());
@@ -91,7 +91,7 @@ public class StrukturUserSteps {
 
     @When("Admin uploads incorrect struktur user template file")
     public void adminUploadsIncorrectStrukturUserTemplateFile() throws InterruptedException {
-        String fileInvalidPath = "C:\\Users\\Balbo\\Downloads\\DATA_STRUKTUR_USER_INVALID.xlsx";
+        String fileInvalidPath = "C:\\Users\\Balbo\\Downloads\\DataTest\\DATA_STRUKTUR_USER_INVALID.xlsx";
         File invalidFile = new File(fileInvalidPath);
         Thread.sleep(2000);
         importPage.buttonChooseFile().sendKeys(invalidFile.getAbsolutePath());
@@ -107,7 +107,7 @@ public class StrukturUserSteps {
 
     @When("Admin uploads non-Excel file for struktur user")
     public void adminUploadsNonExcelFileForStrukturUser() throws InterruptedException {
-        String fileErrorPath = "C:\\Users\\Balbo\\Downloads\\DATA_STRUKTUR_USER.pdf";
+        String fileErrorPath = "C:\\Users\\Balbo\\Downloads\\DataTest\\DATA_STRUKTUR_USER.pdf";
         File errorFile = new File(fileErrorPath);
         Thread.sleep(2000);
         importPage.buttonChooseFile().sendKeys(errorFile.getAbsolutePath());

@@ -5,7 +5,10 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
         features = "src/test/resources/features",
-        glue = "com/juaracoding/stepdefinitions",
+        glue = {
+                "com/juaracoding/hook",
+                "com/juaracoding/stepdefinitions"
+        },
         tags = "@auth and @negative",
         plugin = {
                 "pretty",
