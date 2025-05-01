@@ -1,4 +1,4 @@
-package com.juaracoding.pages;
+package com.juaracoding.pages.laporanpage.koreksi;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

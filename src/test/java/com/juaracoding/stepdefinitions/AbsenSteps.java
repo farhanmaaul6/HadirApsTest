@@ -1,8 +1,9 @@
 package com.juaracoding.stepdefinitions;
 
 import com.juaracoding.DriverSingleton;
-import com.juaracoding.pages.ImportPage;
-import com.juaracoding.pages.LoginPage;
+import com.juaracoding.pages.importpage.absen.AbsenPage;
+import com.juaracoding.pages.importpage.ImportPage;
+import com.juaracoding.pages.loginpage.LoginPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -18,11 +19,13 @@ public class AbsenSteps {
     private WebDriver driver;
     private ImportPage importPage;
     private LoginPage loginPage;
+    private AbsenPage absenPage;
 
     public AbsenSteps() {
         driver = DriverSingleton.getDriver();
         loginPage = new LoginPage(driver);
         importPage = new ImportPage(driver);
+        absenPage = new AbsenPage(driver);
 
         PageFactory.initElements(driver,this);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -39,8 +42,8 @@ public class AbsenSteps {
         Thread.sleep(2000);
         importPage.openImportMenu();
         Thread.sleep(2000);
-        importPage.openAbsenTab();
-        String actual = importPage.getAbsenLabel();
+        absenPage.openAbsenTab();
+        String actual = absenPage.getAbsenLabel();
         String expected = "Import Absen";
         Assert.assertEquals(actual,expected);
     }

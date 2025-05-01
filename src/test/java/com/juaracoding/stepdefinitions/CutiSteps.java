@@ -1,8 +1,9 @@
 package com.juaracoding.stepdefinitions;
 
 import com.juaracoding.DriverSingleton;
-import com.juaracoding.pages.ImportPage;
-import com.juaracoding.pages.LoginPage;
+import com.juaracoding.pages.importpage.cuti.CutiPage;
+import com.juaracoding.pages.importpage.ImportPage;
+import com.juaracoding.pages.loginpage.LoginPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -18,11 +19,13 @@ public class CutiSteps {
     private WebDriver driver;
     private LoginPage loginPage;
     private ImportPage importPage;
+    private CutiPage cutiPage;
 
     public CutiSteps(){
         driver = DriverSingleton.getDriver();
         loginPage = new LoginPage(driver);
         importPage = new ImportPage(driver);
+        cutiPage = new CutiPage(driver);
 
         PageFactory.initElements(driver,this);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -37,8 +40,8 @@ public class CutiSteps {
     @When("Admin navigates to Import > Cuti")
     public void adminNavigatesToImportCuTi() throws InterruptedException {
         Thread.sleep(2000);
-        importPage.openCutiTab();
-        String actual = importPage.getCutiLabel();
+        cutiPage.openCutiTab();
+        String actual = cutiPage.getCutiLabel();
         String expected = "Import Cuti";
         Assert.assertEquals(actual,expected);
     }
@@ -60,7 +63,7 @@ public class CutiSteps {
         String fileValidPath = "C:\\Users\\Balbo\\Downloads\\DATA_STATUS_USER_VALID.xlsx";
         File validFile = new File(fileValidPath);
         Thread.sleep(2000);
-        importPage.buttonChooseFileCuti().sendKeys(validFile.getAbsolutePath());
+        cutiPage.buttonChooseFileCuti().sendKeys(validFile.getAbsolutePath());
         Thread.sleep(5000);
         importPage.buttonImport();
     }
@@ -81,7 +84,7 @@ public class CutiSteps {
     @Then("Error Message should be show for missing file in cuti")
     public void errorMessageShouldBeShowForMissingFileInCuti() throws InterruptedException {
         Thread.sleep(2000);
-        String actual = importPage.getValidateMessageCuti();
+        String actual = cutiPage.getValidateMessageCuti();
         String expected = "Please select a file.";
         Assert.assertEquals(actual, expected);
     }
@@ -91,7 +94,7 @@ public class CutiSteps {
         String fileInvalidPath = "C:\\Users\\Balbo\\Downloads\\DATA_STATUS_USER_INVALID.xlsx";
         File invalidFile = new File(fileInvalidPath);
         Thread.sleep(2000);
-        importPage.buttonChooseFileCuti().sendKeys(invalidFile.getAbsolutePath());
+        cutiPage.buttonChooseFileCuti().sendKeys(invalidFile.getAbsolutePath());
         Thread.sleep(2000);
         importPage.buttonImport();
     }
@@ -107,7 +110,7 @@ public class CutiSteps {
         String fileErrorPath = "C:\\Users\\Balbo\\Downloads\\DATA_STATUS_USER.pdf";
         File errorFile = new File(fileErrorPath);
         Thread.sleep(2000);
-        importPage.buttonChooseFileCuti().sendKeys(errorFile.getAbsolutePath());
+        cutiPage.buttonChooseFileCuti().sendKeys(errorFile.getAbsolutePath());
         Thread.sleep(2000);
         importPage.buttonImport();
     }
@@ -115,6 +118,6 @@ public class CutiSteps {
     @Then("Error message should be show for file type in cuti")
     public void errorMessageShouldBeShowForFileTypeInCuti() throws InterruptedException {
         Thread.sleep(2000);
-        importPage.getHelperTextCuti();
+        cutiPage.getHelperTextCuti();
     }
 }

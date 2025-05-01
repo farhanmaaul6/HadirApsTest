@@ -1,7 +1,7 @@
 package com.juaracoding.stepdefinitions;
 
 import com.juaracoding.DriverSingleton;
-import com.juaracoding.pages.LoginPage;
+import com.juaracoding.pages.loginpage.LoginPage;
 import com.juaracoding.utils.Browser;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;

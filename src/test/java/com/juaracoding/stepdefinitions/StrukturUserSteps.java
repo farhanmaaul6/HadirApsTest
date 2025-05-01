@@ -1,8 +1,9 @@
 package com.juaracoding.stepdefinitions;
 
 import com.juaracoding.DriverSingleton;
-import com.juaracoding.pages.ImportPage;
-import com.juaracoding.pages.LoginPage;
+import com.juaracoding.pages.importpage.ImportPage;
+import com.juaracoding.pages.importpage.strukturuser.StrukturUserPage;
+import com.juaracoding.pages.loginpage.LoginPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -18,11 +19,13 @@ public class StrukturUserSteps {
     private WebDriver driver;
     private LoginPage loginPage;
     private ImportPage importPage;
+    private StrukturUserPage strukturUserPage;
 
     public StrukturUserSteps() {
         driver = DriverSingleton.getDriver();
         loginPage = new LoginPage(driver);
         importPage = new ImportPage(driver);
+        strukturUserPage = new StrukturUserPage(driver);
 
         PageFactory.initElements(driver, this);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -37,8 +40,8 @@ public class StrukturUserSteps {
     @When("Admin navigates to Import > Struktur User")
     public void adminNavigateToImportStrukturUser() throws InterruptedException {
         Thread.sleep(200);
-        importPage.openStrukturUserTab();
-        String actual = importPage.getStrukturUserLabel();
+        strukturUserPage.openStrukturUserTab();
+        String actual = strukturUserPage.getStrukturUserLabel();
         String expected = "Import Struktur User";
         Assert.assertEquals(actual, expected);
     }

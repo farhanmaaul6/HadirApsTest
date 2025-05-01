@@ -1,8 +1,9 @@
 package com.juaracoding.stepdefinitions;
 
 import com.juaracoding.DriverSingleton;
-import com.juaracoding.pages.ImportPage;
-import com.juaracoding.pages.LoginPage;
+import com.juaracoding.pages.importpage.ImportPage;
+import com.juaracoding.pages.importpage.statusaktif.StatusAktifPage;
+import com.juaracoding.pages.loginpage.LoginPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -18,11 +19,14 @@ public class StatusAktifSteps {
     private WebDriver driver;
     private LoginPage loginPage;
     private ImportPage importPage;
+    private StatusAktifPage statusAktifPage;
+
 
     public StatusAktifSteps() {
         driver = DriverSingleton.getDriver();
         loginPage = new LoginPage(driver);
         importPage = new ImportPage(driver);
+        statusAktifPage = new StatusAktifPage(driver);
 
         PageFactory.initElements(driver, this);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -37,8 +41,8 @@ public class StatusAktifSteps {
     @When("Admin navigates to Import > Status Aktif")
     public void adminNavigateToImportStatusAktif() throws InterruptedException {
         Thread.sleep(2000);
-        importPage.openStatusAktifTab();
-        String actual = importPage.getStatusAktifLabel();
+        statusAktifPage.openStatusAktifTab();
+        String actual = statusAktifPage.getStatusAktifLabel();
         String expected = "Import Status Aktif";
         Assert.assertEquals(actual, expected);
     }
