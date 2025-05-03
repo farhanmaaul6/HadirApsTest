@@ -4,7 +4,7 @@
 
     <test name="Menu Laporan dan Menu Import ">
         <classes>
-            <class name="com.juaracoding.PositiveTestRunner" />
+            <class name="com.juaracoding.runner.TestRunner" />
         </classes>
     </test>
 </suite>

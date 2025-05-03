@@ -10,7 +10,7 @@ public class ChromeManager {
         WebDriverManager.chromedriver().driverVersion("130.0.6723.116").setup();
 
         ChromeOptions options = new ChromeOptions();
-        options.setBinary("C:\\Tools\\chrome-win64\\chrome.exe");
+        options.setBinary("C:\\Users\\Christian\\Downloads\\chrome-win64\\chrome-win64\\chrome.exe");
 
         options.addArguments("--start-maximized");
 

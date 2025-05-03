@@ -1,7 +1,7 @@
 package com.juaracoding.stepdefinitions;
 
 import com.juaracoding.DriverSingleton;
-import com.juaracoding.pages.LoginPage;
+import com.juaracoding.pages.loginpage.LoginPage;
 import com.juaracoding.utils.Browser;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -15,7 +15,7 @@ public class LoginStepTest {
     private WebDriver driver;
     private LoginPage loginPage;
 
-    @Given("User is on the login page")
+    @Given("Admin is on the login page")
     public void setLoginPage() {
         driver = DriverSingleton.getDriver();
         driver.get(Browser.URL);
@@ -24,8 +24,8 @@ public class LoginStepTest {
         loginPage = new LoginPage(driver);
     }
 
-    @When("User enters email {string} and password {string}")
-    public void userEntersEmailAndPassword(String username, String password) throws InterruptedException {
+    @When("Admin enters email {string} and password {string}")
+    public void adminEntersEmailAndPassword(String username, String password) throws InterruptedException {
         Thread.sleep(2000);
         loginPage.loginAction(username, password);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
@@ -33,8 +33,8 @@ public class LoginStepTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
     }
 
-    @Then("User should be redirected to the dashboard")
-    public void userShouldBeRedirectedToTheDashboard() throws InterruptedException {
+    @Then("Admin should be redirected to the dashboard")
+    public void adminShouldBeRedirectedToTheDashboard() throws InterruptedException {
         Thread.sleep(2000);
         String actual = loginPage.getDashboardLabel();
         String expected = "Dashboard Menu";

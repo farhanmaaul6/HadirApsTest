@@ -1,11 +1,14 @@
-package com.juaracoding;
+package com.juaracoding.runner;
 
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
         features = "src/test/resources/features",
-        glue = "com/juaracoding/stepdefinitions",
+        glue = {
+                "com/juaracoding/hook",
+                "com/juaracoding/stepdefinitions"
+        },
         tags = "@auth and @negative",
         plugin = {
                 "pretty",

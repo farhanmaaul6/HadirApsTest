@@ -1,4 +1,4 @@
-package com.juaracoding.pages;
+package com.juaracoding.pages.loginpage;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
