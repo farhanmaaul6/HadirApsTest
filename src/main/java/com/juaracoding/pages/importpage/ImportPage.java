@@ -15,7 +15,6 @@ public class ImportPage {
     @FindBy(xpath = "//button[@type='submit']")
     private WebElement buttonImport;
 
-
     @FindBy(xpath = "//input[@id='selfie']")
     private WebElement buttonChooseFile;
 
