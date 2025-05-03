@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="TA JC SQA21">
-    <parameter name="browser" value="EDGE" />
 
     <test name="Menu Laporan dan Menu Import ">
         <classes>
-            <class name="com.juaracoding.Hook" />
-            <class name="com.juaracoding.TestRunner" />
-<!--            <class name="com.juaracoding.PositiveTestRunner" />-->
-<!--            <class name="com.juaracoding.NegativeTestRunner" />-->
+            <class name="com.juaracoding.PositiveTestRunner" />
         </classes>
     </test>
 </suite>

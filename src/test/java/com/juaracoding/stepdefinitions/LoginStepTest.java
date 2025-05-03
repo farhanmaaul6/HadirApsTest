@@ -40,4 +40,8 @@ public class LoginStepTest {
         String expected = "Dashboard Menu";
         Assert.assertEquals(actual, expected);
     }
+
+    @Given("User sudah login dan berada di halaman dashboard")
+    public void userSudahLoginDanBeradaDiHalamanDashboard() {
+    }
 }
