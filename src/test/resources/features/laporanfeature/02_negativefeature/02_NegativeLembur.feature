@@ -6,13 +6,13 @@ Feature: Negative Test Overtime Report
   @auth @negative
   Scenario: Export overtime report with empty data
     When Admin navigates to the Overtime report page
-    And Admin clicks the Reset button
     And Admin clicks the Export button
     Then Export file should not be generated
 
   @auth @negative
   Scenario: Search overtime by invalid date
-    When Admin selects start date "Jan 1, 2026" and end date "Jan 31, 2026"
+    When Admin clicks the Reset button
+    And Admin selects start date "Jan 1, 2026" and end date "Jan 31, 2026"
     And Admin clicks the Search button
     Then No overtime report data should be displayed
 
@@ -22,10 +22,10 @@ Feature: Negative Test Overtime Report
     And Admin clicks the Search button
     Then No overtime report data should be displayed
 
-#  @auth @negative
-#  Scenario: Search overtime by invalid unit name
-#    When Admin clicks the Reset button
-#    And Admin clicks the Filter button
-#    And Admin inputs invalid unit name "Pedagang"
-#    And Admin clicks the Apply button
-#    Then No overtime report data should be displayed
+  @auth @negative
+  Scenario: Search overtime by invalid unit name
+    When Admin clicks the Reset button
+    And Admin clicks the Filter button
+    And Admin inputs invalid unit name "Pedagang"
+    And Admin clicks the Apply button
+    Then No overtime report data should be displayed

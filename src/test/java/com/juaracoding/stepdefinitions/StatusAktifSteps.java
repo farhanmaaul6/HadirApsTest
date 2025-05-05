@@ -61,7 +61,7 @@ public class StatusAktifSteps {
 
     @When("Admin uploads valid status aktif template file")
     public void adminUploadsValidStatusAktifTemplateFile() throws InterruptedException {
-        String fileValidPath = "C:\\Users\\Balbo\\Downloads\\DataTest\\DATA_STATUS_USER_VALID.xlsx";
+        String fileValidPath = "src/test/resources/DataTest/DATA_STATUS_USER_VALID.xlsx";
         File validFile = new File(fileValidPath);
         Thread.sleep(2000);
         importPage.buttonChooseFile().sendKeys(validFile.getAbsolutePath());
@@ -92,7 +92,7 @@ public class StatusAktifSteps {
 
     @When("Admin uploads incorrect status aktif template file")
     public void adminUploadsIncorrectStatusAktifTemplateFile() throws InterruptedException {
-        String fileInvalidPath = "C:\\Users\\Balbo\\Downloads\\DataTest\\DATA_STATUS_USER_INVALID.xlsx";
+        String fileInvalidPath = "src/test/resources/DataTest/DATA_STATUS_USER_INVALID.xlsx";
         File invalidFile = new File(fileInvalidPath);
         Thread.sleep(2000);
         importPage.buttonChooseFile().sendKeys(invalidFile.getAbsolutePath());
@@ -108,7 +108,7 @@ public class StatusAktifSteps {
 
     @When("Admin uploads non-Excel file for status aktif")
     public void adminUploadsNonExcelFileForStatusAktif() throws InterruptedException {
-        String fileErrorPath = "C:\\Users\\Balbo\\Downloads\\DATA_STATUS_USER.pdf";
+        String fileErrorPath = "src/test/resources/DataTest/DATA_STATUS_USER.pdf";
         File errorFile = new File(fileErrorPath);
         Thread.sleep(2000);
         importPage.buttonChooseFile().sendKeys(errorFile.getAbsolutePath());

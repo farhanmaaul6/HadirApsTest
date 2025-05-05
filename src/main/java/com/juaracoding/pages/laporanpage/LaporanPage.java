@@ -20,11 +20,11 @@ public class LaporanPage {
 
     @FindBy(xpath = "//*[@id=\"__next\"]/div/div[2]/div/div[1]/div/div[2]/div")
     private WebElement popUpUpdate;
-
-    @FindBy(xpath = "//button[@type='submit']")
+                     //*[@id=\"__next\"]/div/div[2]/div/div[1]/div/div[1]/div/div[2]/form/div/div[2]/div/button[3]
+    @FindBy(xpath = "//*[@id=\"__next\"]/div/div[2]/div/div[1]/div/div[1]/div/div[2]/form/div/div[2]/div/button[3]")
     private WebElement buttonSearch;
 
-    @FindBy(xpath = "//button[normalize-space()='Reset']")
+    @FindBy(xpath = "//*[@id=\"__next\"]/div/div[2]/div/div[1]/div/div[1]/div/div[2]/form/div/div[2]/div/button[2]")
     private WebElement buttonReset;
 
     @FindBy(xpath = "//*[@id=\"__next\"]/div/div[2]/div/div[1]/div/div[1]/div/div[2]/form/div/div[2]/div/button[1]")
@@ -71,6 +71,8 @@ public class LaporanPage {
     }
 
     public void searchFilterActionValid(String searchTerm) throws InterruptedException {
+        searchBarFilter.sendKeys(Keys.CONTROL + "a");
+        searchBarFilter.sendKeys(Keys.BACK_SPACE);
         searchBarFilter.sendKeys(searchTerm);
 
         Thread.sleep(1000);

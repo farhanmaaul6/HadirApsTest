@@ -9,7 +9,6 @@ import io.cucumber.testng.CucumberOptions;
                 "com/juaracoding/hook",
                 "com/juaracoding/stepdefinitions"
         },
-        tags = "@auth and @eben",
         plugin = {
                 "pretty",
                 "html:target/cucumber-reports/positive.html",

@@ -60,7 +60,7 @@ public class CutiSteps {
 
     @When("Admin uploads valid cuti template files")
     public void adminUploadsValidCutiTemplateFiles() throws InterruptedException {
-        String fileValidPath = "C:\\Users\\Balbo\\Downloads\\DataTest\\Data_Cuti_VALID.xlsx";
+        String fileValidPath = "src/test/resources/DataTest/Data_Cuti_VALID.xlsx";
         File validFile = new File(fileValidPath);
         Thread.sleep(2000);
         cutiPage.buttonChooseFileCuti().sendKeys(validFile.getAbsolutePath());
@@ -91,7 +91,7 @@ public class CutiSteps {
 
     @When("Admin uploads incorrect Cuti template file")
     public void adminUploadsIncorrectCutiTemplateFile() throws InterruptedException {
-        String fileInvalidPath = "C:\\Users\\Balbo\\Downloads\\DataTest\\Data_Cuti_INVALID.xlsx";
+        String fileInvalidPath = "src/test/resources/DataTest/Data_Cuti_INVALID.xlsx";
         File invalidFile = new File(fileInvalidPath);
         Thread.sleep(2000);
         cutiPage.buttonChooseFileCuti().sendKeys(invalidFile.getAbsolutePath());
@@ -107,7 +107,7 @@ public class CutiSteps {
 
     @When("Admin uploads non-excel file for cuti")
     public void adminUploadsNonExcelFileForCuti() throws InterruptedException {
-        String fileErrorPath = "C:\\Users\\Balbo\\Downloads\\DataTest\\Data_Cuti_VALID.pdf";
+        String fileErrorPath = "src/test/resources/DataTest/Data_Cuti_VALID.pdf";
         File errorFile = new File(fileErrorPath);
         Thread.sleep(2000);
         cutiPage.buttonChooseFileCuti().sendKeys(errorFile.getAbsolutePath());

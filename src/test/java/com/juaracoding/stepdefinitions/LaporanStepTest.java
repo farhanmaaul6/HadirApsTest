@@ -1,6 +1,11 @@
 package com.juaracoding.stepdefinitions;
 
 import com.juaracoding.DriverSingleton;
+import com.juaracoding.pages.laporanpage.LaporanPage;
+import com.juaracoding.pages.laporanpage.koreksi.KoreksiPage;
+import com.juaracoding.pages.laporanpage.lembur.LemburPage;
+import com.juaracoding.pages.laporanpage.sakit.SakitPage;
+import com.juaracoding.pages.loginpage.LoginPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
@@ -10,19 +15,11 @@ import java.time.Duration;
 
 public class LaporanStepTest {
     private WebDriver driver;
-    private LoginPage loginPage;
-    private KoreksiPage koreksiPage;
     private LaporanPage laporanPage;
-    private SakitPage sakitPage;
-    private LemburPage lemburPage;
 
     public LaporanStepTest() {
         driver = DriverSingleton.getDriver();
-        loginPage = new LoginPage(driver);
         laporanPage = new LaporanPage(driver);
-        koreksiPage = new KoreksiPage(driver);
-        sakitPage = new SakitPage(driver);
-        lemburPage = new LemburPage(driver);
 
         PageFactory.initElements(driver, this);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));

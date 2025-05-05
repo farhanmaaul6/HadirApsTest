@@ -20,7 +20,7 @@ public class LoginPage {
     @FindBy(xpath = "//*[@id=\"__next\"]/div/div/div[2]/div/div[2]/form/button")
     private WebElement loginButton;
 
-    @FindBy(xpath = "//p[@class='MuiTypography-root MuiTypography-body1 css-1ar04jk']")
+    @FindBy(xpath = "//*[@id=\"__next\"]/div/div[1]/div[2]/div/div/div[1]/div[2]/div/div/div/div/a/div/div[2]")
     private WebElement dashboardLabel;
 
     public LoginPage(WebDriver driver) {
