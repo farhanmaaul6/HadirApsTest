@@ -2,7 +2,7 @@ package com.juaracoding.stepdefinitions;
 
 import com.juaracoding.DriverSingleton;
 import com.juaracoding.pages.importpage.ImportPage;
-import com.juaracoding.pages.importpage.statusaktif.StatusAktifPage;
+import com.juaracoding.pages.importpage.StatusAktifPage;
 import com.juaracoding.pages.loginpage.LoginPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;

@@ -2,7 +2,7 @@ package com.juaracoding.stepdefinitions;
 
 import com.juaracoding.DriverSingleton;
 import com.juaracoding.pages.laporanpage.LaporanPage;
-import com.juaracoding.pages.laporanpage.koreksi.KoreksiPage;
+import com.juaracoding.pages.laporanpage.KoreksiPage;
 import com.juaracoding.pages.loginpage.LoginPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -74,6 +74,10 @@ public class KoreksiStepTest {
     @When("Admin clicks the Approve button for the first correction")
     public void adminClicksTheApproveButtonForTheFirstCorrection() throws InterruptedException {
         Thread.sleep(2000);
+        laporanPage.goToNextPage();
+        Thread.sleep(2000);
+        laporanPage.goToNextPage();
+        Thread.sleep(2000);
         koreksiPage.buttonApprove();
     }
 
@@ -91,6 +95,10 @@ public class KoreksiStepTest {
 
     @When("Admin clicks the Reject button for the first correction")
     public void adminClicksTheRejectButtonForTheFirstCorrection() throws InterruptedException {
+        Thread.sleep(2000);
+        laporanPage.goToNextPage();
+        Thread.sleep(2000);
+        laporanPage.goToNextPage();
         Thread.sleep(2000);
         koreksiPage.buttonReject();
     }

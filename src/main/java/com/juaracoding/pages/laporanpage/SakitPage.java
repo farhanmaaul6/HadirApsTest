@@ -1,4 +1,4 @@
-package com.juaracoding.pages.laporanpage.sakit;
+package com.juaracoding.pages.laporanpage;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;

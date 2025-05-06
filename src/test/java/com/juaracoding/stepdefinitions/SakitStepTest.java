@@ -2,7 +2,7 @@ package com.juaracoding.stepdefinitions;
 
 import com.juaracoding.DriverSingleton;
 import com.juaracoding.pages.laporanpage.LaporanPage;
-import com.juaracoding.pages.laporanpage.sakit.SakitPage;
+import com.juaracoding.pages.laporanpage.SakitPage;
 import com.juaracoding.pages.loginpage.LoginPage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;

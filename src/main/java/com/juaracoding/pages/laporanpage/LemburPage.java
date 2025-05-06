@@ -1,4 +1,4 @@
-package com.juaracoding.pages.laporanpage.lembur;
+package com.juaracoding.pages.laporanpage;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

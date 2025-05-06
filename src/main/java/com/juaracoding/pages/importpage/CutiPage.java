@@ -1,4 +1,4 @@
-package com.juaracoding.pages.importpage.cuti;
+package com.juaracoding.pages.importpage;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
