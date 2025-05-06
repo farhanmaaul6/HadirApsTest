@@ -75,7 +75,7 @@ public class LaporanPage {
         searchBarFilter.sendKeys(Keys.BACK_SPACE);
         searchBarFilter.sendKeys(searchTerm);
 
-        Thread.sleep(1000);
+        Thread.sleep(2000);
 
         List<WebElement> options;
         options = By.xpath("//li[contains(@class,'MuiAutocomplete-option')]").findElements((SearchContext) driver);
@@ -96,7 +96,7 @@ public class LaporanPage {
     public void searchFilterActionInvalid(String searchTerm) throws InterruptedException {
         searchBarFilter.sendKeys(searchTerm);
 
-        Thread.sleep(1000);
+        Thread.sleep(2000);
 
         List<WebElement> options;
         options = By.xpath("//li[contains(@class,'MuiAutocomplete-option')]").findElements((SearchContext) driver);

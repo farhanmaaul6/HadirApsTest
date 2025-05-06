@@ -1,6 +1,6 @@
 Feature: Login Functionality
 
-  @auth @positive @negative @eben
+  @auth @positive @negative
   Scenario: Login
     Given Admin is on the login page
     When Admin enters email "admin@hadir.com" and password "MagangSQA_JC@123"
