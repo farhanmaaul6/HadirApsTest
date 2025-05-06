@@ -33,15 +33,15 @@ Feature: Positive Test Correction Report
     And Admin clicks the Search button
     Then The correction data filtered by name and date is displayed
 
-#  @auth @positive
-#  Scenario: Approve a correction request
-#    When Admin clicks the Approve button for the first correction
-#    And Admin clicks the Confirm button
-#    Then A success popup should appear
-#
-#  @auth @positive
-#  Scenario: Reject a correction request
-#    When Admin clicks the Reject button for the first correction
-#    And Admin inputs rejection reason "Alasan tidak valid"
-#    And Admin clicks the Submit rejection button
-#    Then A success popup should appear
+  @auth @positive
+  Scenario: Approve a correction request
+    When Admin clicks the Approve button for the first correction
+    And Admin clicks the Confirm button
+    Then A success popup should appear
+
+  @auth @positive
+  Scenario: Reject a correction request
+    When Admin clicks the Reject button for the first correction
+    And Admin inputs rejection reason "Alasan tidak valid"
+    And Admin clicks the Submit rejection button
+    Then A success popup should appear
