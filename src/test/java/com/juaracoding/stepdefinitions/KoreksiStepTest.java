@@ -74,8 +74,6 @@ public class KoreksiStepTest {
     @When("Admin clicks the Approve button for the first correction")
     public void adminClicksTheApproveButtonForTheFirstCorrection() throws InterruptedException {
         Thread.sleep(2000);
-        laporanPage.goToNextPage();
-        Thread.sleep(2000);
         koreksiPage.buttonApprove();
     }
 
@@ -93,8 +91,6 @@ public class KoreksiStepTest {
 
     @When("Admin clicks the Reject button for the first correction")
     public void adminClicksTheRejectButtonForTheFirstCorrection() throws InterruptedException {
-        Thread.sleep(2000);
-        laporanPage.goToNextPage();
         Thread.sleep(2000);
         koreksiPage.buttonReject();
     }

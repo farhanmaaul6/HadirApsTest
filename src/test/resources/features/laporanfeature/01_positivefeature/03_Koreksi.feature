@@ -35,13 +35,15 @@ Feature: Positive Test Correction Report
 
   @auth @positive
   Scenario: Approve a correction request
-    When Admin clicks the Approve button for the first correction
+    When Admin clicks the Reset button
+    And Admin clicks the Approve button for the first correction
     And Admin clicks the Confirm button
     Then A success popup should appear
 
   @auth @positive
   Scenario: Reject a correction request
-    When Admin clicks the Reject button for the first correction
+    When Admin clicks the Reset button
+    And Admin clicks the Reject button for the first correction
     And Admin inputs rejection reason "Alasan tidak valid"
     And Admin clicks the Submit rejection button
     Then A success popup should appear

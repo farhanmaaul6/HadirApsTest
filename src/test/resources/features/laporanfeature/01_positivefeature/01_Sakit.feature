@@ -27,7 +27,8 @@ Feature: Positive Test Sick Report
 
   @auth @positive
   Scenario: Search sick report by name and date
-    When Admin clicks the Reset button
+    When Admin navigates to the Sick report page
+    And Admin clicks the Reset button
     And Admin inputs "Elva" in the search field
     And Admin selects start date "Jan 1, 2024" and end date "Jan 31, 2024"
     And Admin clicks the Search button
