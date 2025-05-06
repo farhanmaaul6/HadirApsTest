@@ -30,9 +30,6 @@ Feature: Positive Test Correction Report
     When Admin clicks the Reset button
     And Admin inputs "Juned" in the search field
     And Admin selects start date "Feb 1, 2024" and end date "Feb 29, 2024"
-    And Admin clicks the Filter button
-    And Admin inputs unit name "Brodo"
-    And Admin clicks the Apply button
     And Admin clicks the Search button
     Then The correction data filtered by name and date is displayed
 

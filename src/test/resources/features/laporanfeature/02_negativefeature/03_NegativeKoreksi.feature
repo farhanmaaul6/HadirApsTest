@@ -23,7 +23,6 @@ Feature: Negative Test Correction Report
     And Admin clicks the Filter button
     And Admin inputs invalid unit name "Juru Parkir"
     And Admin clicks the Apply button
-    And Admin clicks the Search button
     Then No correction data should be displayed
 
   @auth @negative

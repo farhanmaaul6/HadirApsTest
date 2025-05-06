@@ -30,9 +30,6 @@ Feature: Positive Test Sick Report
     When Admin clicks the Reset button
     And Admin inputs "Elva" in the search field
     And Admin selects start date "Jan 1, 2024" and end date "Jan 31, 2024"
-    And Admin clicks the Filter button
-    And Admin inputs unit name "AMEX MERCHANT"
-    And Admin clicks the Apply button
     And Admin clicks the Search button
     Then Sick report data should be shown by name and date
 

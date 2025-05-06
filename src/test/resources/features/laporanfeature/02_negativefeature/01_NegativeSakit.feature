@@ -12,7 +12,8 @@ Feature: Negative Test Sick Report
 
   @auth @negative
   Scenario: Search sick report by invalid employee name
-    When Admin inputs "Kazama" in the search field
+    When Admin clicks the Reset button
+    And Admin inputs "Kazama" in the search field
     And Admin clicks the Search button
     Then No sick report data should be displayed
 

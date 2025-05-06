@@ -18,7 +18,8 @@ Feature: Negative Test Overtime Report
 
   @auth @negative
   Scenario: Search overtime by invalid employee name
-    When Admin inputs "Joko" in the search field
+    When Admin clicks the Reset button
+    And Admin inputs "Joko" in the search field
     And Admin clicks the Search button
     Then No overtime report data should be displayed
 
